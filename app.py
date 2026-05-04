@@ -937,7 +937,6 @@ with right_col:
         components.html(folium_map_html, height=600)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown("<br>", unsafe_allow_html=True)
         html_out = st.session_state.get("map_html_export", "")
         safe_t   = re.sub(r"[^\w\-]", "_", ftitle or "map").lower()
         st.download_button(
