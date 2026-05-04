@@ -876,27 +876,8 @@ with left_col:
     uploaded_files = st.file_uploader("Upload", accept_multiple_files=True,
                                       type=allowed_ext, label_visibility="collapsed")
 
-    st.markdown('<div class="sec-label" style="margin-top:1rem;">Legend Items</div>', unsafe_allow_html=True)
-    st.markdown('<div style="font-size:.73rem;color:var(--muted2);margin-bottom:.6rem;font-family:\'DM Sans\',sans-serif;">Label + color per item. Leave blank for auto-assignment.</div>',
-                unsafe_allow_html=True)
-
-    if "legend_count" not in st.session_state:
-        st.session_state.legend_count = 2
-
-    c1, c2 = st.columns(2)
-    if c1.button("+ Add"):
-        st.session_state.legend_count += 1
-    if c2.button("− Remove"):
-        st.session_state.legend_count = max(1, st.session_state.legend_count - 1)
-
     legend_entries = []
-    for i in range(st.session_state.legend_count):
-        a, b = st.columns([2, 1])
-        label = a.text_input(f"L{i}", placeholder="Item name", label_visibility="collapsed", key=f"l{i}")
-        color = b.color_picker(f"C{i}", label_visibility="collapsed", key=f"c{i}")
-        if label:
-            legend_entries.append({"label": label, "color": color})
-
+    
     st.markdown('<div class="sec-label" style="margin-top:1rem;">Prompt</div>', unsafe_allow_html=True)
     ai_prompt = st.text_area(
         "AI Prompt",
