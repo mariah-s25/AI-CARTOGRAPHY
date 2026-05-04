@@ -905,7 +905,7 @@ with right_col:
             </div>
             """, unsafe_allow_html=True)
             m = folium.Map(location=[20, 0], zoom_start=2, tiles="CartoDB positron")
-            st_folium(m, height=560, width="100%", returned_objects=[])
+            st_folium(m, height=600, width="100%", returned_objects=[])
             return
 
       
@@ -934,7 +934,7 @@ with right_col:
         </div>
         """, unsafe_allow_html=True)
 
-        components.html(folium_map_html, height=560)
+        components.html(folium_map_html, height=600)
 
         st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
