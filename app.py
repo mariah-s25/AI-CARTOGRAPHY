@@ -900,7 +900,7 @@ with left_col:
     st.markdown('<div class="sec-label" style="margin-top:1rem;">Prompt</div>', unsafe_allow_html=True)
     ai_prompt = st.text_area(
         "AI Prompt",
-        placeholder=( "Describe layers, colors, classes, study area, purpose…\n\n" ),
+        placeholder=( "Describe title, purpose, layers, colors, classes, study area …\n\n" ),
         height=130,
         label_visibility="collapsed",
     )
