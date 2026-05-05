@@ -851,7 +851,6 @@ st.markdown("""
     <span class="masthead-rule"></span>
     <span class="masthead-sub">Describe any map - the AI builds it</span>
   </div>
-  <span class="masthead-badge">Geospatial Studio</span>
 </div>
 """, unsafe_allow_html=True)
 
