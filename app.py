@@ -417,7 +417,7 @@ BASEMAPS = {
 
 VECTOR_TYPES = ["geojson", "json", "kml", "zip"]
 RASTER_TYPES = ["tif", "tiff", "geotiff"]
-MIXED_TYPES  = ["geojson", "json", "kml", "zip", "tif", "tiff", "geotiff", "image/tiff", "image/geotiff"]
+MIXED_TYPES  = ["geojson", "json", "kml", "zip", "tif", "tiff", "geotiff"]
 
 def parse_color(s):
     if not s or not s.strip():
@@ -864,9 +864,9 @@ with left_col:
     layer_type = st.selectbox("Layer Type",
                               ["Vector", "Raster", "Mixed (Vector + Raster)"],
                               label_visibility="collapsed")
-    if "Vector" in layer_type:
+    if "Vector" == layer_type:
         allowed_ext = VECTOR_TYPES
-    elif "Raster" in layer_type:
+    elif "Raster" == layer_type:
         allowed_ext = RASTER_TYPES
     else:
         allowed_ext = MIXED_TYPES
