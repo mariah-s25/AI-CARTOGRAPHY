@@ -417,7 +417,7 @@ BASEMAPS = {
 
 VECTOR_TYPES = ["geojson", "json", "kml", "zip"]
 RASTER_TYPES = ["tif", "tiff", "geotiff"]
-MIXED_TYPES = ["geojson", "json", "kml", "zip", "tif", "tiff", "geotiff"]
+MIXED_TYPES  = ["geojson", "json", "kml", "zip", "tif", "tiff", "geotiff", "image/tiff", "image/geotiff"]
 
 def parse_color(s):
     if not s or not s.strip():
@@ -866,17 +866,14 @@ with left_col:
                               label_visibility="collapsed")
     if "Vector" in layer_type:
         allowed_ext = VECTOR_TYPES
-        uploader_type = VECTOR_TYPES
     elif "Raster" in layer_type:
         allowed_ext = RASTER_TYPES
-        uploader_type = RASTER_TYPES
     else:
         allowed_ext = MIXED_TYPES
-        uploader_type = None
         
     st.markdown('<div class="sec-label" style="margin-top:1rem;">Upload Files</div>', unsafe_allow_html=True)
     uploaded_files = st.file_uploader("Upload", accept_multiple_files=True,
-                                      type=uploader_type, label_visibility="collapsed")
+                                      type=allowed_ext, label_visibility="collapsed")
 
     legend_entries = []
     
